@@ -1,6 +1,9 @@
 /node_modules
 /src/uploads
 /build
+/uploads
+\uploads
+.webp
 
 .env
 .env.local

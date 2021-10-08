@@ -15,6 +15,7 @@ Routes.get("/vagas", Vagas.index);
 Routes.delete("/vagas", Vagas.delete);
 
 Routes.post("/video", Video.store);
+Routes.get("/video/:videoName", Video.findVideo);
 
 Routes.post("/vagas/:vaga_id/candidatos", Candidatos.store);
 // Routes.get('/candidatos', Candidatos.indexPk)
