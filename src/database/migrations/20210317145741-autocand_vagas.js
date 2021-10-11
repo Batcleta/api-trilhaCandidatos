@@ -1,95 +1,42 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('autocand_vagas', {
+  up: async (queryInterface, DataTypes) => {
+    await queryInterface.createTable("autocand_vagas", {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
       },
-      vagaEmpresa: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      nomeVaga: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      vagaDataLimite: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      vagaDescr: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      reqIdade: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-      },
-      minIdade: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      maxIdade: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      reqExp: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-      },
-      reqExpAnos: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      residProximo: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-      },
-      regContrato: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      vagaPeriodo: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      faixaSalarial: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-      },
-      faixaSalarialInicial: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      faixaSalarialfinal: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      reqCapacita: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-      },
-      capacitaCurso: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false
-      }
+      NomeDaEmpresa: { type: DataTypes.STRING, allowNull: false },
+      NomeDaVaga: { type: DataTypes.STRING, allowNull: false },
+      dataLimiteParaCadastro: { type: DataTypes.DATE, allowNull: true },
+      // Descrição da vaga
+      descricaoDaVaga: { type: DataTypes.STRING, allowNull: false },
+      regimeDeContrato: { type: DataTypes.STRING, allowNull: false },
+      jornadaDaVaga: { type: DataTypes.STRING, allowNull: false },
+      // Requerimentos da vaga
+      requerExperiencia: { type: DataTypes.STRING, allowNull: true },
+      requerCapacitacao: { type: DataTypes.STRING, allowNull: true },
+      minIdade: { type: DataTypes.INTEGER, allowNull: true },
+      maxIdade: { type: DataTypes.INTEGER, allowNull: true },
+      residProximo: { type: DataTypes.BOOLEAN, allowNull: false },
+      requerCNH: { type: DataTypes.STRING, allowNull: true },
+      // Beneficios da vaga
+      faixaSalarialInicial: { type: DataTypes.STRING, allowNull: true },
+      faixaSalarialfinal: { type: DataTypes.STRING, allowNull: true },
+      PossuiValeTransporte: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiValeAlimentacao: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiValeRefeicao: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiPlanoDeSaude: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiDayOffAniversário: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiJornadaFlexivel: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiJornadaHibrida: { type: DataTypes.BOOLEAN, allowNull: true },
+      possuiHomeOffice: { type: DataTypes.BOOLEAN, allowNull: true },
     });
-
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('autocand_vagas');
-
-  }
+    await queryInterface.dropTable("autocand_vagas");
+  },
 };

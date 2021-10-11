@@ -1,0 +1,48 @@
+## Criação das vagas
+
+-- Painel Mvp
+
+- Tela de login para entrada de adm para visualização na área administrativa
+
+- Visualização dos dandidatos na página inicial
+    - Visualização inicial
+        - Data de criação do cadastro
+        - Nome do candidato
+        - Nome da vaga
+        - Video do candidato
+    - Visualização avançada
+        - Ficha do meliante que será exibida de forma modular
+            - Experiências profissionais
+            - Capacitações
+            - informações pessoais
+            - contatos
+
+- Criação das vagas que serão expostas na página de cadastro da trilha
+    - Nome da empresa
+    - Nome da vaga
+    - descrição da vaga
+        - Informativo sobre a vaga e seus requerimentos
+        - Informativo sobre a jornada de trabalho
+        - Regime de contrato
+    - Requerimentos da vaga
+        - Requer experiência? Se sim, quanto tempo? :number
+        - Requer capacitação? Se sim, quais?
+        - Requer idade mínima ou máxima? Informar : number
+        - Residir próximo a empresa?
+        - Requer CNH?
+    - Benefícios da vaga
+        - Informar Salário? -> sim? salário ou faixa salarial. Não? A combinar
+        - Informar Vale transporte? -> informar, não informar ou não possui
+        - Informar Plano de saúde -> informar, não informar ou não possui
+        - Jornada flexivel?
+        - Day off no aiversário?
+        - Vale alimentação
+        - Vale Refeição
+
+
+
+-- Api VMP
+
+- Verificar a possibilidade de criação de vagas através dos controllers
+- Verificar como a api cadastra os itens no banco e se os campos acima batem com a forma de cadastro atual
+- verificar como está o controller na parte dos candidatos e se ele permite a visualização dos itens nos conformes
